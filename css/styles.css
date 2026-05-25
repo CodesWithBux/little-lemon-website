@@ -1,0 +1,265 @@
+/* ============================================================
+   LITTLE LEMON — SHARED STYLES
+   Brand: green #495E57 · yellow #F4CE14 · Markazi Text + Karla
+   ============================================================ */
+:root{
+  --green:#495E57;
+  --green-dark:#3a4d47;
+  --green-deep:#2f3e39;
+  --yellow:#F4CE14;
+  --yellow-dark:#e0bc09;
+  --orange:#EE9972;
+  --peach:#FBDABB;
+  --offwhite:#EDEFEE;
+  --white:#FFFFFF;
+  --ink:#1d2622;
+  --muted:#6b7672;
+  --line:#e3e6e5;
+  --shadow-sm:0 4px 14px rgba(47,62,57,.10);
+  --shadow-md:0 14px 36px rgba(47,62,57,.16);
+  --shadow-lg:0 26px 60px rgba(47,62,57,.22);
+  --r:14px;
+  --r-lg:22px;
+  --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Karla',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--offwhite);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Markazi Text',Georgia,serif;font-weight:600;line-height:1.02;color:var(--green)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:'Karla',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.02em;
+  padding:14px 26px;border:none;border-radius:12px;cursor:pointer;
+  transition:transform .16s ease, box-shadow .16s ease, background .16s ease, color .16s ease;
+}
+.btn-primary{background:var(--yellow);color:var(--green-deep);box-shadow:0 8px 22px rgba(244,206,20,.4)}
+.btn-primary:hover{background:var(--yellow-dark);transform:translateY(-2px)}
+.btn-primary:active{transform:translateY(0)}
+.btn-green{background:var(--green);color:var(--yellow)}
+.btn-green:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
+.btn-ghost:hover{background:var(--green);color:var(--white)}
+.btn-block{width:100%}
+.btn-lg{padding:17px 34px;font-size:1.06rem}
+
+/* ---------- HEADER / NAV ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(237,239,238,.86);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid rgba(73,94,87,.10);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Markazi Text',serif;font-size:30px;font-weight:600;color:var(--green);line-height:1}
+.logo .lemon{width:34px;height:34px;flex:none}
+.logo .dot{color:var(--yellow)}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-weight:600;font-size:.96rem;color:var(--green-dark);position:relative;padding:6px 0}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--yellow);transition:width .22s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2.5px;background:var(--green);border-radius:2px;transition:.2s}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:radial-gradient(1100px 520px at 88% -10%, rgba(244,206,20,.22), transparent 55%),
+             linear-gradient(180deg,var(--green) 0%, var(--green-dark) 100%);
+  color:var(--offwhite);overflow:hidden;
+}
+.hero::after{content:'';position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(244,206,20,.16),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:72px 0 84px}
+.hero-eyebrow{display:inline-block;color:var(--yellow);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;margin-bottom:14px}
+.hero h1{font-size:clamp(54px,8vw,92px);color:var(--yellow);margin-bottom:2px}
+.hero h2{font-size:clamp(26px,4vw,38px);color:var(--white);font-weight:500;margin-bottom:20px}
+.hero p{font-size:1.12rem;max-width:480px;color:rgba(237,239,238,.88);margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.hero-meta .m{display:flex;flex-direction:column}
+.hero-meta .m b{font-family:'Markazi Text',serif;font-size:30px;color:var(--yellow);line-height:1}
+.hero-meta .m span{font-size:.82rem;color:rgba(237,239,238,.75);letter-spacing:.03em}
+.hero-card{position:relative;background:var(--white);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);padding:26px;color:var(--ink);transform:rotate(1.4deg)}
+.hero-card .tag{position:absolute;top:-16px;left:24px;background:var(--yellow);color:var(--green-deep);font-weight:800;font-size:.74rem;letter-spacing:.08em;padding:6px 12px;border-radius:8px}
+.plate{width:100%;aspect-ratio:1;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 38%, #f6ad55 0%, #cd9442 42%, #8f5523 100%);display:grid;place-items:center}
+.hero-card h3{font-size:30px;margin:18px 0 4px}
+.hero-card p{font-size:.95rem;color:var(--muted);margin:0}
+.hero-card .pricerow{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.hero-card .price{font-family:'Markazi Text',serif;font-size:26px;color:var(--green);font-weight:700}
+.stars{color:var(--yellow);font-size:1rem;letter-spacing:2px}
+
+/* ---------- PAGE BANNER (inner pages) ---------- */
+.banner{background:linear-gradient(180deg,var(--green) 0%,var(--green-dark) 100%);color:var(--offwhite);padding:54px 0 60px;text-align:center}
+.banner .eyebrow{color:var(--yellow);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+.banner h1{color:var(--yellow);font-size:clamp(44px,7vw,72px);margin-top:8px}
+.banner p{max-width:560px;margin:12px auto 0;color:rgba(237,239,238,.85);font-size:1.06rem}
+
+/* ---------- HIGHLIGHTS STRIP ---------- */
+.strip{background:var(--peach)}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 0}
+.feat{display:flex;gap:14px;align-items:flex-start}
+.feat .ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--green);color:var(--yellow);display:grid;place-items:center}
+.feat h4{font-size:21px;margin-bottom:2px}
+.feat p{font-size:.86rem;color:#6a5743;line-height:1.4}
+
+/* ---------- SECTIONS / MENU ---------- */
+.section{padding:84px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;gap:20px;flex-wrap:wrap}
+.section-head .eyebrow{color:var(--orange);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem}
+.section-head h2{font-size:clamp(40px,6vw,62px);margin-top:6px}
+.section-head p{color:var(--muted);max-width:420px}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.dish-card{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.dish-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.dish-img{height:170px;display:grid;place-items:center;position:relative;overflow:hidden}
+.dish-fallback{position:absolute;inset:0;display:grid;place-items:center}
+.dish-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dish-body{padding:20px 22px 24px}
+.dish-body .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dish-body h3{font-size:25px}
+.dish-body .cost{font-family:'Markazi Text',serif;color:var(--orange);font-weight:700;font-size:21px;white-space:nowrap}
+.dish-body p{color:var(--muted);font-size:.9rem;margin-top:6px}
+.menu-cat{font-family:'Markazi Text',serif;font-size:34px;color:var(--green);margin:10px 0 22px;padding-bottom:8px;border-bottom:3px solid var(--yellow);display:inline-block}
+
+/* ---------- BOOKING WIDGET ---------- */
+.booking{background:var(--white);color:var(--ink);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);max-width:560px;margin:0 auto;overflow:hidden}
+.steps{display:flex;background:var(--offwhite);padding:18px 26px;gap:8px}
+.steps .step{flex:1;display:flex;align-items:center;gap:9px;font-weight:700;font-size:.84rem;color:var(--muted)}
+.steps .step .n{width:26px;height:26px;border-radius:50%;background:#dfe3e2;color:var(--muted);display:grid;place-items:center;font-size:.82rem;flex:none;transition:.25s}
+.steps .step.active{color:var(--green)}
+.steps .step.active .n{background:var(--green);color:var(--yellow)}
+.steps .step.done .n{background:var(--yellow);color:var(--green)}
+.panel{padding:30px 30px 34px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel h3{font-size:30px;margin-bottom:4px}
+.panel .lede{color:var(--muted);font-size:.94rem;margin-bottom:22px}
+
+.field{margin-bottom:18px}
+.field>label{display:block;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:9px}
+.field input,.field select{width:100%;font-family:'Karla',sans-serif;font-size:1rem;color:var(--ink);padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--white);transition:border-color .16s, box-shadow .16s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(73,94,87,.10)}
+.field .err{color:#c0392b;font-size:.8rem;margin-top:6px;display:none}
+.field.invalid input{border-color:#c0392b}
+.field.invalid .err{display:block}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.dates{display:flex;gap:9px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.dates::-webkit-scrollbar{display:none}
+.day{flex:0 0 60px;border:1.6px solid var(--line);border-radius:13px;padding:9px 0;text-align:center;cursor:pointer;background:var(--white);transition:.18s;user-select:none}
+.day:hover{border-color:var(--yellow)}
+.day .dow{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.day .dom{font-family:'Markazi Text',serif;font-size:24px;font-weight:600;color:var(--green);line-height:1;margin-top:2px}
+.day .mo{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:2px}
+.day.sel{background:var(--green);border-color:var(--green);transform:scale(1.04);box-shadow:0 8px 18px rgba(73,94,87,.25)}
+.day.sel .dow,.day.sel .mo{color:rgba(244,206,20,.85)}
+.day.sel .dom{color:var(--yellow)}
+
+.times{display:flex;flex-direction:column;gap:6px}
+.period-label{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-top:6px}
+.period-label:first-child{margin-top:0}
+.period-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:4px}
+.time{border:1.6px solid var(--line);border-radius:11px;padding:11px 0;text-align:center;font-weight:700;font-size:.92rem;color:var(--green);cursor:pointer;background:var(--white);transition:.18s}
+.time:hover{border-color:var(--yellow);background:#fffdf0}
+.time.sel{background:var(--green);border-color:var(--green);color:var(--yellow);box-shadow:0 8px 18px rgba(73,94,87,.25)}
+.time.disabled{color:#bcc4c1;background:#f6f7f7;cursor:not-allowed;text-decoration:line-through}
+
+.stepper{display:flex;align-items:center;justify-content:space-between;border:1.6px solid var(--line);border-radius:13px;padding:8px 10px 8px 18px;background:var(--white)}
+.stepper .who{display:flex;align-items:center;gap:12px}
+.stepper .val{font-family:'Markazi Text',serif;font-size:30px;font-weight:600;color:var(--green);line-height:1;min-width:30px;text-align:center}
+.stepper .sub{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.step-btn{width:42px;height:42px;border:none;border-radius:11px;background:var(--offwhite);color:var(--green);font-size:22px;font-weight:700;cursor:pointer;transition:.15s}
+.step-btn:hover{background:var(--peach)}
+.step-btn:active{transform:scale(.92)}
+.step-btn:disabled{opacity:.4;cursor:not-allowed}
+.stepper .ctrls{display:flex;gap:8px}
+
+.occ{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.occ .o{border:1.6px solid var(--line);border-radius:12px;padding:12px 6px;text-align:center;font-weight:700;font-size:.8rem;color:var(--green);cursor:pointer;background:var(--white);transition:.18s}
+.occ .o:hover{border-color:var(--yellow)}
+.occ .o .em{display:block;font-size:1.3rem;margin-bottom:4px}
+.occ .o.sel{background:var(--green);color:var(--yellow);border-color:var(--green)}
+
+.recap{display:flex;justify-content:space-between;align-items:center;background:var(--offwhite);border-radius:13px;padding:15px 18px;margin-bottom:22px}
+.recap .when{font-family:'Markazi Text',serif;font-size:23px;font-weight:600;color:var(--green);line-height:1.05}
+.recap .who{font-size:.84rem;color:var(--muted);margin-top:2px}
+.recap .edit{background:var(--yellow);color:var(--green-deep);border:none;font-weight:800;font-size:.74rem;letter-spacing:.04em;padding:8px 12px;border-radius:9px;cursor:pointer;font-family:inherit}
+
+.nav-row{display:flex;gap:12px;margin-top:26px}
+.nav-row .btn{flex:1}
+
+/* ---------- CONFIRMATION ---------- */
+.confirm{text-align:center;padding:0!important}
+.confirm-top{background:linear-gradient(160deg,var(--green),var(--green-deep));padding:38px 30px 30px;position:relative;overflow:hidden}
+.confirm-top::before{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(244,206,20,.08);top:-140px;right:-90px}
+.check{width:84px;height:84px;border-radius:50%;background:var(--yellow);margin:0 auto 16px;display:grid;place-items:center;box-shadow:0 10px 26px rgba(244,206,20,.4);position:relative;z-index:2;animation:pop .55s cubic-bezier(.18,1.4,.55,1) both}
+@keyframes pop{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.confirm-top h3{color:var(--yellow);font-size:38px;position:relative;z-index:2}
+.confirm-top p{color:rgba(237,239,238,.85);font-size:.95rem;position:relative;z-index:2}
+.confirm-top p b{color:var(--yellow)}
+.booking-card{margin:-26px 26px 0;background:var(--white);border-radius:14px;box-shadow:var(--shadow-md);padding:22px;text-align:left;position:relative;z-index:3}
+.booking-card .ref{display:flex;justify-content:space-between;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.booking-card .ref b{color:var(--green)}
+.booking-card .big{font-family:'Markazi Text',serif;font-size:30px;font-weight:600;color:var(--green);line-height:1.05;margin-bottom:8px}
+.booking-card .addr{font-size:.92rem;color:var(--muted);line-height:1.6}
+.booking-card .addr b{color:var(--ink)}
+.booking-card hr{border:none;border-top:1px dashed var(--line);margin:14px 0}
+.booking-card .note{font-size:.84rem;color:var(--muted)}
+.confirm-actions{padding:22px 26px 30px;display:flex;flex-direction:column;gap:10px}
+.restart{color:var(--green);text-decoration:underline;font-size:.9rem;cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.about h2{font-size:clamp(40px,6vw,60px)}
+.about p{color:var(--muted);margin-top:16px;font-size:1.04rem}
+.about-imgs{position:relative;height:380px}
+.about-imgs .ph{position:absolute;border-radius:18px;box-shadow:var(--shadow-md);overflow:hidden}
+.about-imgs .ph1{width:62%;height:74%;top:0;left:0}
+.about-imgs .ph2{width:56%;height:64%;bottom:0;right:0;border:6px solid var(--white)}
+.about-imgs .ph svg{width:100%;height:100%}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--green-deep);color:rgba(237,239,238,.82)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;padding:60px 0 30px}
+footer .logo{color:var(--yellow);margin-bottom:14px}
+footer h4{color:var(--yellow);font-size:22px;margin-bottom:14px}
+footer ul{list-style:none}
+footer li{margin-bottom:9px;font-size:.92rem}
+footer a:hover{color:var(--yellow)}
+footer .desc{font-size:.92rem;max-width:280px;line-height:1.6}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.10);padding:20px 0;text-align:center;font-size:.84rem;color:rgba(237,239,238,.6)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;padding:50px 0 60px}
+  .hero-card{max-width:420px}
+  .strip-grid{grid-template-columns:repeat(2,1fr)}
+  .menu-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:30px}
+  .about-imgs{height:320px;order:-1}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media (max-width:680px){
+  .nav-links{position:absolute;top:74px;left:0;right:0;background:var(--offwhite);flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .3s ease;border-bottom:1px solid var(--line)}
+  .nav-links.open{max-height:360px;padding:14px 24px}
+  .nav-links a{width:100%;padding:12px 0;border-bottom:1px solid rgba(73,94,87,.08)}
+  .burger{display:flex}
+  .nav-cta .btn-ghost{display:none}
+  .menu-grid{grid-template-columns:1fr}
+  .strip-grid{grid-template-columns:1fr}
+  .period-grid{grid-template-columns:repeat(3,1fr)}
+  .pair{grid-template-columns:1fr}
+  .panel{padding:24px 20px 28px}
+  .section{padding:60px 0}
+}
