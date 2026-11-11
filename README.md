@@ -5,6 +5,7 @@ restaurant in Arcadia, Pretoria. Built with plain HTML, CSS and JavaScript — n
 frameworks, no build step.
 
 ## How to run
+**[Open Little-lemon](https://codeswithbux.github.io/little-lemon-website/)**
 
 Just open **`index.html`** in any web browser. That's it.
 
